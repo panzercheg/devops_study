@@ -21,4 +21,5 @@ install for jenkins:
 --publish 50000:50000 \
 --volume jenkins-data:/var/jenkins_home \
 --volume jenkins-docker-certs:/certs/client:ro myjenkins-for-study:jdk25
-7) 
+7) open http://localhost:8080 or open tab "ports" at "codespaces"
+8) password for admin jenkins - docker logs jenkins-study-jdk25
