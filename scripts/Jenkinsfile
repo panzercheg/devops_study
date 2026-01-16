@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  options { timestamps() }
+  stages {
+    stage('Checkout') { steps { checkout scm } }
+
+    stage('Test') {
+      steps { sh 'chmod +x scripts/test.sh && scripts/test.sh' }
+    }
+  }
+  post {
+    success { echo 'OK' }
+    failure { echo 'FAIL' }
+  }
+}

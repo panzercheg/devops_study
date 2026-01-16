@@ -10,7 +10,7 @@ docker run --name jenkins-docker --rm --detach \
    --volume jenkins-data:/var/jenkins_home \
    --publish 2376:2376 \
    docker:dind --storage-driver overlay2
-docker build -t myjenkins-for-study:jdk25 -f Dockerfile .
+docker build -t myjenkins-for-study:jdk25 -f ../Dockerfile .
 docker run --name jenkins-study-jdk25 \
     --restart=on-failure \
     --detach \

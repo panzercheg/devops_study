@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                checkout scmGit(
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/panzercheg/devops_study.git'
+                    ]],
+                    branches: [[name: '*']]
+                )
+            }
+        }
+    }
+}
